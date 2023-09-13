@@ -107,37 +107,6 @@ public class FrmPrincipal extends JFrame {
 	
 	
 	private void iniciarManejadoresEventos() {
-		btnSalir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-		});
-		
-		btnLimpiar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtApellido.setText(null);
-				txtGrupo.setText(null);
-				txtCuotaBase.setText(null);
-				txtCuotaNeta.setText(null);
-			}
-		});
-		
-		btnCalcular.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Alumno a;
-				try {
-					String apellido=txtApellido.getText();
-					int grupo=Integer.valueOf(txtGrupo.getText());
-					double cuotaBase=Double.valueOf(txtCuotaBase.getText());
-					a=new Alumno(apellido, grupo, cuotaBase);
-					txtCuotaNeta.setText(String.valueOf(a.cuotaNeta()));
-				}catch(Exception ex) {
-					txtCuotaNeta.setText("Error");
-					JOptionPane.showMessageDialog(null, ex);
-				}
-				
-			}
-		});
 		
 	}
 	
